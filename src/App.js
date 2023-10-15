@@ -50,7 +50,7 @@ function App() {
     SetTodoList(updatedTask);
   };
 
-  //function to modify to by the action provided by the user such as D = Delete, U = Update, DC = Delete Completed
+  //function to modify to by the action provided by the user such as D = Delete, U = Update, DC = Delete Completed, CA = Complete All
   const modifyTodoList = (action, data) => {
     console.log(action, data);
 

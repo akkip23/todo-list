@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 
+// using styled component to style Todo List Body
 export const TodoListBody = styled.div`
   width: 60%;
   background: #874cbe;

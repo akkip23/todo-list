@@ -1,5 +1,7 @@
+// using styled component library to handle css in ract app without overalapping css files
 import { styled } from "styled-components";
 
+// todo list item body
 export const TodoListItemsBody = styled.div`
   padding: 20px;
   width: 60%;
@@ -7,6 +9,7 @@ export const TodoListItemsBody = styled.div`
   border-radius: 20px;
 `;
 
+// styling for task to delete All completed task and complete all task button
 export const Task = styled.div`
   display: flex;
   justify-content: space-between;
@@ -31,6 +34,7 @@ export const TodoListData = styled.div`
   }
 `;
 
+// todo list content
 export const Todos = styled.div`
   width: 75%;
   display: flex;
@@ -48,6 +52,7 @@ export const Todos = styled.div`
   }
 `;
 
+//modify to content
 export const ModifyTodos = styled.div`
   width: 20%;
   display: flex;

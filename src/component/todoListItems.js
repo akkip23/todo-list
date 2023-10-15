@@ -1,4 +1,5 @@
 import { useState } from "react";
+// import styling using styled components
 import {
   TodoListItemsBody,
   Task,
@@ -10,6 +11,7 @@ import {
 function TodoListItems(props) {
   const { todoItems } = props;
 
+  // checkbox change function
   const handleCheckboxChange = (itm) => {
     props.updateTask(itm);
   };
@@ -19,6 +21,7 @@ function TodoListItems(props) {
       <div style={{ display: "flex", padding: 10, justifyContent: "center" }}>
         <TodoListItemsBody>
           <Task>
+            {/* on action the modifyTodo function perform different action D = Delete, U = Update, DC = Delete Completed, CA = Complete All */}
             <div onClick={() => props.modifyTodo("CA", [])}>
               <img
                 src="https://cdn-icons-png.flaticon.com/128/5290/5290058.png"
@@ -44,6 +47,7 @@ function TodoListItems(props) {
                 />
                 <p>{itm.title}</p>
               </Todos>
+              {/* modify todo by deleting or updating the todo list */}
               <ModifyTodos>
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/2853/2853458.png"
