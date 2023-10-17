@@ -5,7 +5,10 @@ import AddTodo from "./component/addTodo";
 // list item component show all added todo in a list
 import TodoListItems from "./component/todoListItems";
 //get todo dummy data from API
-import { GetTodoData } from "./component/todoApiCall/getTodoData";
+import {
+  GetTodoData,
+  DeleteTodoData,
+} from "./component/todoApiCall/getTodoData";
 
 function App() {
   // useState hook to set and update list
@@ -57,6 +60,7 @@ function App() {
     if (action === "D") {
       // filter out the data which does not have id given or selected todo to delete
       const delTodo = TodoList.filter((itm) => itm.id !== data.id);
+      DeleteTodoData(TodoList);
       //to  set filtered to todo list
       SetTodoList(delTodo);
     } else if (action === "U") {

@@ -1,6 +1,7 @@
 // import useState and useEffect hooks from react to handle state of todo
 import { useState, useEffect } from "react";
 import { TodoListBody } from "./addTodoCss";
+import { AddNewTodoData, UpdateTodoData } from "./todoApiCall/getTodoData";
 
 function AddTodo(props) {
   const [todoValue, setTodoValue] = useState("");
@@ -16,7 +17,7 @@ function AddTodo(props) {
   }, [TodoData]);
 
   // function to be work whne user tries to add new todo or modify existing todo
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault(); // prevent the default form submission
 
     if (TodoData == "") {
@@ -26,9 +27,12 @@ function AddTodo(props) {
         completed: false,
       };
 
-      addTodo(todo);
+      const AddNewTodo = await AddNewTodoData(todo);
+      console.log("AddNewTodo", AddNewTodo);
+      addTodo(AddNewTodo);
     } else {
       update(todoValue);
+      const updateTodo = await UpdateTodoData(todoValue);
     }
     setTodoValue("");
   }
