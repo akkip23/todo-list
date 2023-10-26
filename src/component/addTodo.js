@@ -29,6 +29,8 @@ function AddTodo(props) {
 
       const AddNewTodo = await AddNewTodoData(todo);
       console.log("AddNewTodo", AddNewTodo);
+      AddNewTodo.id = todoItems.length + 1;
+
       addTodo(AddNewTodo);
     } else {
       update(todoValue);
